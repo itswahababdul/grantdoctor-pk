@@ -1,0 +1,242 @@
+[
+  {
+    "query": "solar panel efficiency project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-000",
+      "SAMPLE-A-001"
+    ]
+  },
+  {
+    "query": "wind turbine blades project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-010",
+      "SAMPLE-A-011"
+    ]
+  },
+  {
+    "query": "battery storage grid project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-020",
+      "SAMPLE-A-021"
+    ]
+  },
+  {
+    "query": "biomass energy project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-030",
+      "SAMPLE-A-031"
+    ]
+  },
+  {
+    "query": "wheat yield drought project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-100",
+      "SAMPLE-A-101"
+    ]
+  },
+  {
+    "query": "cotton pest management project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-110",
+      "SAMPLE-A-111"
+    ]
+  },
+  {
+    "query": "soil salinity project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-120",
+      "SAMPLE-A-121"
+    ]
+  },
+  {
+    "query": "precision irrigation project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-130",
+      "SAMPLE-A-131"
+    ]
+  },
+  {
+    "query": "dengue vector surveillance project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-200",
+      "SAMPLE-A-201"
+    ]
+  },
+  {
+    "query": "maternal nutrition project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-210",
+      "SAMPLE-A-211"
+    ]
+  },
+  {
+    "query": "tuberculosis screening project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-220",
+      "SAMPLE-A-221"
+    ]
+  },
+  {
+    "query": "hospital waste project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-230",
+      "SAMPLE-A-231"
+    ]
+  },
+  {
+    "query": "groundwater depletion project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-300",
+      "SAMPLE-A-301"
+    ]
+  },
+  {
+    "query": "canal seepage project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-310",
+      "SAMPLE-A-311"
+    ]
+  },
+  {
+    "query": "rainwater harvesting project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-320",
+      "SAMPLE-A-321"
+    ]
+  },
+  {
+    "query": "wastewater reuse project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-330",
+      "SAMPLE-A-331"
+    ]
+  },
+  {
+    "query": "urdu language model project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-400",
+      "SAMPLE-A-401"
+    ]
+  },
+  {
+    "query": "crop disease detection project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-410",
+      "SAMPLE-A-411"
+    ]
+  },
+  {
+    "query": "traffic prediction project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-420",
+      "SAMPLE-A-421"
+    ]
+  },
+  {
+    "query": "fraud detection project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-430",
+      "SAMPLE-A-431"
+    ]
+  },
+  {
+    "query": "nano coating corrosion project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-500",
+      "SAMPLE-A-501"
+    ]
+  },
+  {
+    "query": "graphene composite project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-510",
+      "SAMPLE-A-511"
+    ]
+  },
+  {
+    "query": "recycled concrete project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-520",
+      "SAMPLE-A-521"
+    ]
+  },
+  {
+    "query": "polymer membrane project",
+    "libs": [
+      "approved"
+    ],
+    "relevant_ids": [
+      "SAMPLE-A-530",
+      "SAMPLE-A-531"
+    ]
+  }
+]

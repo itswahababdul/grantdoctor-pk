@@ -1,0 +1,232 @@
+# Official HEC NRPU rules, each tied to the HEC document it came from.
+# Read on 2026-10-28 from hec.gov.pk. ALWAYS re-check the current call document before submitting:
+# limits and domains change between calls.
+verified_on: "2026-10-28"
+
+sources:
+  faq_2026:
+    title: "HEC NRPU 2026-27 Call FAQs (updated 29-09-26)"
+    url: "https://www.hec.gov.pk/english/services/universities/nrpu/Documents/HEC%20NRPU%202026%20call-FAQs%20Updated%2029-09-26.pdf"
+  policy_2024:
+    title: "NRPU Revised Policy Paper 2024"
+    url: "https://www.hec.gov.pk/english/services/universities/nrpu/Documents/Revised%20NRPU_internal_policy_Commission%20meeting%202024%201.pdf"
+  call_2025:
+    title: "NRPU Call SOPs 2024-25"
+    url: "https://www.hec.gov.pk/english/services/universities/nrpu/Documents/NRPU-Call-2025.pdf"
+  eligibility_page:
+    title: "HEC NRPU Eligibility Criteria page"
+    url: "https://www.hec.gov.pk/english/services/universities/nrpu/Pages/Eligibility-Criteria.aspx"
+  how_to_apply:
+    title: "HEC NRPU How to Apply page"
+    url: "https://www.hec.gov.pk/english/services/universities/nrpu/Pages/How-to-Apply.aspx"
+
+domains_2026_27:
+  - "Social, Behavioral, Economic and Human Sciences"
+  - "Natural and Emerging Sciences"
+  - "Product, Process and Technology Development"
+domains_2024_25:
+  - "Basic Research Grant"
+  - "Health, Wellbeing, and Biotechnology"
+  - "Digital Technologies and Cyber-Physical Systems"
+  - "Sustainable Energy and Transportation"
+  - "Smart and Sustainable Agriculture"
+  - "Climate Change, Environmental Management, and Sustainability"
+  - "Advanced Materials and Industrial Innovation"
+  - "Governance, Policy, and Societal Innovation"
+pi_qualifications: ["PhD", "FCPS", "MCPS", "FRCS"]
+
+# kind: hard = ineligibility/threshold rule | required = must be covered | preference = HEC prefers/encourages
+rules:
+  # ---------------- HARD RULES ----------------
+  - id: HEC-01
+    title: "Project duration must not exceed 24 months"
+    kind: hard
+    check: max_duration
+    params: {max_months: 24}
+    source: faq_2026
+    fix: "Shorten the plan or phase the work so it fits 24 months."
+  - id: HEC-02
+    title: "Budget up to PKR 20 million for basic research; more is allowed only for applied projects with industry contribution"
+    kind: hard
+    check: budget_cap
+    params: {cap: 20000000}
+    source: policy_2024
+    fix: "Reduce the budget to 20 million, or show a documented industry contribution (applied research only)."
+  - id: HEC-03
+    title: "PI must be a faculty member with PhD, FCPS, MCPS or FRCS"
+    kind: hard
+    check: pi_qualification
+    source: eligibility_page
+    fix: "The PI must hold one of the listed qualifications."
+  - id: HEC-04
+    title: "PI contract must not be shorter than the project duration"
+    kind: hard
+    check: pi_contract
+    source: eligibility_page
+    fix: "Get the contract extended, or choose a PI whose contract covers the full project."
+  - id: HEC-05
+    title: "A PI can hold only one NRPU grant at a time"
+    kind: hard
+    check: one_grant
+    source: eligibility_page
+    fix: "Wait until the current NRPU grant closes, or nominate a different PI."
+  - id: HEC-06
+    title: "PI with a previous project delayed by more than 2 years is ineligible"
+    kind: hard
+    check: previous_delay
+    params: {max_years: 2}
+    source: eligibility_page
+    fix: "Choose a different PI, or close out the delayed project first."
+  - id: HEC-07
+    title: "Similarity index must be at most 19%"
+    kind: hard
+    check: similarity
+    params: {max_pct: 19}
+    source: faq_2026
+    fix: "Rewrite the overlapping text in your own words and re-run the similarity check."
+  - id: HEC-08
+    title: "AI-generated content must be at most 25%"
+    kind: hard
+    check: ai_content
+    params: {max_pct: 25}
+    source: faq_2026
+    fix: "Rewrite flagged sections yourself and re-run the AI-content check."
+  - id: HEC-09
+    title: "Proposal must fall within a research domain of the call"
+    kind: hard
+    check: domain
+    source: faq_2026
+    fix: "Pick the domain that matches your problem. Read the current call for its exact list."
+  - id: HEC-10
+    title: "Industry collaboration is mandatory for 'Product, Process and Technology Development'"
+    kind: hard
+    check: industry_for_product
+    source: faq_2026
+    fix: "Add an industry partner with a documented role, and ideally a letter of support."
+  - id: HEC-11
+    title: "Application must be endorsed by the head of ORIC / research office through the HEC portal"
+    kind: hard
+    check: oric
+    source: policy_2024
+    fix: "Get the ORIC endorsement before submitting on research.hec.gov.pk."
+
+  # ---------------- REQUIRED CONTENT (policy section 3) ----------------
+  - id: HEC-20
+    title: "Proposal covers a clear problem statement"
+    kind: required
+    check: covers
+    params: {pattern: "problem|gap|challenge|issue|need"}
+    source: policy_2024
+    fix: "Add a short problem-statement paragraph."
+  - id: HEC-21
+    title: "Objectives are stated and aligned with national priorities / local problems"
+    kind: required
+    check: covers
+    params: {pattern: "national|priorit|sdg|sustainable development|pakistan|local"}
+    source: policy_2024
+    fix: "State how each objective supports a national priority or a local problem."
+  - id: HEC-22
+    title: "Work already done by the PI or others on the topic is described"
+    kind: required
+    check: covers
+    params: {pattern: "literature|previous|prior|existing|earlier|already|review of"}
+    source: policy_2024
+    fix: "Add a short review of prior work and what remains unsolved."
+  - id: HEC-23
+    title: "Project team and collaborators (ministries, departments, NGOs, industry) are described"
+    kind: required
+    check: covers
+    params: {pattern: "team|co-pi|collaborat|partner|ministr|ngo|industry|expert"}
+    source: policy_2024
+    fix: "Describe the team, their roles, and external collaborators."
+  - id: HEC-24
+    title: "Plan for gaining commitment from proposed partners"
+    kind: required
+    check: covers
+    params: {pattern: "commitment|letter of support|mou|memorandum|agreement|partner"}
+    source: policy_2024
+    fix: "Explain how partner commitment will be secured (letters of support, MoU)."
+  - id: HEC-25
+    title: "Beneficiaries and what the study delivers that would not happen otherwise"
+    kind: required
+    check: covers
+    params: {pattern: "benefici|farmers|community|patients|end[- ]user|stakeholder|industry|society"}
+    source: policy_2024
+    fix: "Name the beneficiaries and the unique value of this study."
+  - id: HEC-26
+    title: "Outcomes of the study are identified"
+    kind: required
+    check: covers
+    params: {pattern: "outcome|deliverable|output|product|prototype|publication|policy brief|patent"}
+    source: policy_2024
+    fix: "List concrete outcomes (papers, prototype, policy brief, trained students)."
+  - id: HEC-27
+    title: "Sustainability plan beyond the grant period"
+    kind: required
+    check: covers
+    params: {pattern: "sustainab|continu|beyond the (project|grant)|scale|maintenance|long[- ]term"}
+    source: policy_2024
+    fix: "Add a short plan for how the work continues after funding ends."
+
+  # ---------------- STRONG-PROPOSAL CHARACTERISTICS (FAQ Q24) ----------------
+  - id: HEC-30
+    title: "Originality and innovation are shown"
+    kind: preference
+    check: covers
+    params: {pattern: "novel|innovat|original|first|new approach|unique"}
+    source: faq_2026
+    fix: "State clearly what is new compared with existing work."
+  - id: HEC-31
+    title: "Methodology is feasible and detailed (at least ~40 words)"
+    kind: preference
+    check: method_detail
+    params: {min_words: 40}
+    source: faq_2026
+    fix: "Describe design, data, tools and analysis steps in more detail."
+  - id: HEC-32
+    title: "Objectives are clear (two or more distinct objectives)"
+    kind: preference
+    check: objectives_clear
+    source: faq_2026
+    fix: "Number the objectives and make each one specific and measurable."
+  - id: HEC-33
+    title: "Capacity building (students, training) is included"
+    kind: preference
+    check: covers
+    params: {pattern: "student|train|capacity|workshop|ms |phd|mphil"}
+    source: faq_2026
+    fix: "Show how MS/MPhil/PhD students and early-career researchers take part."
+  - id: HEC-34
+    title: "Implementation plan (timeline, milestones) is included"
+    kind: preference
+    check: covers
+    params: {pattern: "timeline|gantt|work package|milestone|phase|month"}
+    source: faq_2026
+    fix: "Add a timeline with milestones."
+  - id: HEC-35
+    title: "Societal / economic / environmental impact is explained"
+    kind: preference
+    check: covers
+    params: {pattern: "economic|social|policy|industr|environment|technolog|well-being|impact"}
+    source: faq_2026
+    fix: "Explain the expected impact in one of the areas HEC lists (economy, society, policy, industry, environment)."
+  - id: HEC-36
+    title: "Interdisciplinary / multidisciplinary approach is encouraged"
+    kind: preference
+    check: covers
+    params: {pattern: "interdisciplin|multidisciplin|cross-disciplin|multi-disciplin"}
+    source: faq_2026
+    fix: "If true for your project, say which disciplines work together."
+  - id: HEC-37
+    title: "Industry collaboration is preferred"
+    kind: preference
+    check: industry_pref
+    source: eligibility_page
+    fix: "Add an industry partner (no money can be paid to private collaborators)."
+  - id: HEC-38
+    title: "International collaboration is encouraged (voluntary)"
+    kind: preference
+    check: covers
+    params: {pattern: "international|saudi|t[uü]rkiye|china|usa|united states|uk|european|japan|korea|australia|singapore"}
+    source: faq_2026
+    fix: "Optional: add a foreign co-investigator if it genuinely strengthens the project."

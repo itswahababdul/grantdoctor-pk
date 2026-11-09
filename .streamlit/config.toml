@@ -1,0 +1,29 @@
+# GrantDoctor-PK theme: teal accent, neutral greys, Inter. Light and dark are both defined,
+# and Streamlit follows the viewer's system / browser setting unless they pick one in Settings.
+
+[theme]
+primaryColor = "#0e8a7d"
+linkColor = "#0e8a7d"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+baseRadius = "12px"
+showSidebarBorder = true
+
+[theme.light]
+backgroundColor = "#fafafa"
+secondaryBackgroundColor = "#f1f2f4"
+textColor = "#17181b"
+borderColor = "#e3e5e8"
+
+[theme.dark]
+backgroundColor = "#101114"
+secondaryBackgroundColor = "#181a1e"
+textColor = "#ebecee"
+borderColor = "#2a2d33"
+linkColor = "#3cc4b4"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "none"   # users see a short message, never a Python traceback (the terminal still logs it)
+
+[browser]
+gatherUsageStats = false

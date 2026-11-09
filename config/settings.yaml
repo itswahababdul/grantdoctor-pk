@@ -1,0 +1,30 @@
+paths:
+  raw_dir: data/raw
+  sample_dir: data/sample
+  processed_dir: data/processed
+  index_dir: data/index
+spark:
+  master: "local[*]"
+  shuffle_partitions: 8
+chunking:
+  chunk_words: 120
+  overlap_words: 20
+embedding:
+  # "hashing" = offline/deterministic (tests, CI). Use "intfloat/multilingual-e5-small" or "BAAI/bge-m3" for real runs.
+  model: hashing
+retrieval:
+  top_k: 5
+  candidate_pool: 20
+llm:
+  provider: extractive      # extractive | ollama
+  model: llama3.1
+  url: http://localhost:11434/api/generate
+priority_keywords:           # national priority themes (edit from the latest HEC/PSF call documents)
+  - agriculture
+  - water
+  - energy
+  - health
+  - climate
+  - artificial intelligence
+  - food security
+  - industry

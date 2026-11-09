@@ -1,0 +1,12 @@
+pyspark>=3.5
+pandas<3
+pyarrow
+numpy
+pyyaml
+requests
+beautifulsoup4
+pypdf
+streamlit>=1.50
+plotly>=5.20
+pytest
+# optional (better quality): sentence-transformers

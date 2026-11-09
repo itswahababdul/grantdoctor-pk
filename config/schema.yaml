@@ -1,0 +1,3 @@
+fields: [project_id, title, abstract, objectives, methodology, budget, duration_months, pi, institute, field, year, funder, status, source_url, language, corpus, review_text, meta_review, n_reviews, avg_recommendation, has_code, code_url]
+status_values: [approved, rejected, synthetic_rejected]
+required_sections: [abstract, objectives, methodology, budget, duration_months]

@@ -1,0 +1,9 @@
+data/raw/*
+!data/raw/.gitkeep
+data/processed/
+data/index/
+__pycache__/
+*.pyc
+.venv/
+spark-warehouse/
+metastore_db/

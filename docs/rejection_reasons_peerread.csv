@@ -1,0 +1,12 @@
+reason,n_rejected,n_accepted,rate_rejected,rate_accepted,lift,z,p_value,significant_bonferroni,covered_by_hidden_factor,grant_analogue,suggested_fix,not_addressed_by_grantdoctor
+novelty,255,172,0.639,0.442,1.45,4.03,0.0001,True,duplicate_overlap,Overlaps with already funded work / unclear what is new,State in one sentence what no funded project has done; cite the nearest approved projects.,False
+overclaiming,255,172,0.314,0.186,1.69,2.94,0.0033,True,NONE,"Claims larger than the budget, time or method can deliver",Match each claim to a work package; drop outcomes you cannot measure within the duration.,True
+significance_impact,255,172,0.855,0.744,1.15,2.86,0.0042,True,priority_alignment,Impact or national-priority link not convincing,"Name the beneficiary, the priority theme, and a measurable outcome.",False
+justification_rigor,255,172,0.6,0.465,1.29,2.75,0.006,False,NONE,"Problem and approach not justified (why this method, why now)",Add a short problem-justification section with evidence of the need in Pakistan.,True
+related_work,255,172,0.396,0.285,1.39,2.36,0.0182,False,NONE,Literature review thin or missing local/prior-funded work,Cite previous HEC/PSF-funded work in the area and the gap it leaves.,True
+clarity_writing,255,172,0.608,0.494,1.23,2.32,0.0202,False,NONE,"Proposal hard to follow: structure, language, undefined terms","One-page summary first, define terms, objectives numbered, have a non-expert read it.",True
+analysis_risk,255,172,0.471,0.36,1.31,2.26,0.024,False,NONE,"No risk analysis, limitations or contingency plan","Add a risk table: top 3 risks, likelihood, mitigation, fallback deliverable.",True
+baselines_comparison,255,172,0.78,0.698,1.12,1.93,0.0538,False,NONE,No comparison with the current practice or existing solution,"Add a baseline: what is done today, what it achieves, and the target improvement over it.",True
+evaluation_evidence,255,172,0.965,0.953,1.01,0.58,0.5609,False,data_sample_unclear,"Weak evidence plan: sample, data, evaluation criteria","Give sample size, data source, and the metric that decides success.",False
+reproducibility_details,255,172,0.349,0.355,0.98,-0.12,0.9048,False,NONE,No data-management / open-data / reproducibility plan,"Add a data management plan: what is shared, where, in what format, after how long.",False
+scale_generality,255,172,0.38,0.407,0.93,-0.55,0.5809,False,timeline_unrealistic,Pilot-scale evidence for a large-scale promise,Show a pilot result or a staged plan (pilot -> scale-up) with a go/no-go point.,False
