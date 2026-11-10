@@ -290,15 +290,19 @@ def _run_cli(*args: str) -> tuple[bool, str]:
     return p.returncode == 0, (p.stdout + p.stderr)[-1500:]
 
 
+def _run_script(path: str) -> tuple[bool, str]:
+    p = subprocess.run([sys.executable, path], cwd=str(ROOT), capture_output=True, text=True)
+    return p.returncode == 0, (p.stdout + p.stderr)[-1500:]
+
+
 def build_panel():
     """Shown on pages when the libraries have not been built yet."""
     inject_css()
     st.warning("The libraries are not built yet.")
-    st.write("Put real HEC/PSF `.jsonl` files in `data/raw/` and run `python -m src.app.cli build`, "
-             "or load the fictional sample data to try the app.")
-    if st.button("Load sample data and build libraries", type="primary"):
+    st.write("Click the button to build the libraries from the real HEC data in `data/hec_data.json`.")
+    if st.button("Load HEC data and build libraries", type="primary"):
         with st.spinner("Running the Spark pipeline (about a minute the first time)..."):
-            ok1, log1 = _run_cli("sample")
+            ok1, log1 = _run_script("scripts/ingest_hec_data.py")
             ok2, log2 = _run_cli("build") if ok1 else (False, log1)
         if ok2:
             runtime.reset_runtime()
